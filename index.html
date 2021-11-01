@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>Projekt Systemy Teleinformatyczne</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title same-color-caption">Projekt z Systemów Teleinformatycznych</h1>
+        <p class="main-description">
+            <b>Założenie projektu:</b><br> Projekt ma za zadanie odczytywać obiekty 
+            znajdujące się na zdjęciach oraz na kamerce internetowej po jej uruchomieniu.
+        </p>
+        <h2 class="topic same-color-caption"">Identyfikacja obrazków</h2>
+        <p class="description">
+            Poprzez kliknięcie obrazka, program rozpozna co znajduje się na obraku.
+            Po zidentyfikowaniu przez program dowiemy się co znajduje się na zdjęciu 
+            z podaną pewnością oraz poznamy jego pozycję na zdjęciu.
+        </p>
+        <section id="recognise" class="photo-and-cam">
+
+            <h2 class="topic same-color-caption"">Identyfikacja zdjęć</h2>
+            <p class="description">Sztywno osadzone zdjęcia do identyfikacji</p>
+
+            <div class="classify-on-click">
+                <img class="photo" src="https://cdn.glitch.com/74418d0b-3465-49a2-8c71-a721b7734473%2Fdoggo.jpg?v=1592266725716" crossorigin="anonymous" title="Kliknij w obrazek, aby dowiedzieć się co się na nim znajduje." 
+                    alt="Zdjęcie użyte do prezentacji działania programu na projekt.">
+            </div>
+            <div class="classify-on-click">
+                <img class="photo" width="590" height="394" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" crossorigin="anonymous" title="Kliknij w obrazek, aby dowiedzieć się co się na nim znajduje." 
+                    alt="Zdjęcie użyte do prezentacji działania programu na projekt.">
+            </div>
+
+            <h2 class="topic same-color-caption"">Identyfikacja zdjęć załadowanych z komputera</h2>
+            <div class="style-for-add-photo">
+                <div class="classify-on-click">
+                    <form runat="server">
+                        <input accept="image/*" type='file' id="imgInp" />
+                        <img id="blah" src="#" alt="your image" />
+                    </form>
+                </div>
+            </div>
+
+            <h2 class="topic same-color-caption webcam-style"">Identyfikacja za pomocą kamerki internetowej</h2>
+            <p class="description">
+                Po naciśnięcu przycisku włącz kamerkę, kamerka internetowa uruchomi się. Ukaże na msię obraz kamerki, a wraz z nim pokazane zidentyfikowane obikety.
+                Naciśnięcie przycisku wyłącz kamerkę spowoduje zamknięcie pola z kamerką internetową.
+            </p>
+            <div class="space-for-cam">
+                <div id="live-view" class="video-view">
+                    <div class="space-for-buttons">
+                        <button class="btn btn-start" id="webcam-button">Enable Webcam</button>
+                        <button class="btn btn-stop" id="close-webcam-button">Close Webcam</button>
+                    </div>
+                    <video id="webcam" autoplay></video>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+<script src="script.js"></script>
+</html>
